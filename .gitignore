@@ -76,9 +76,38 @@ artifacts/
 data/raw/*
 data/interim/*
 data/processed/*
+data/external/*
 
 # Keep directory structure
 !data/raw/.gitkeep
 !data/interim/.gitkeep
 !data/processed/.gitkeep
 !data/external/.gitkeep
+
+
+# ==============================
+# Python Packaging
+# ==============================
+*.whl
+
+# ==============================
+# Type Checkers
+# ==============================
+.mypy_cache/
+.pytype/
+
+# ==============================
+# Ruff / Linting
+# ==============================
+.ruff_cache/
+
+# ==============================
+# OS
+# ==============================
+Thumbs.db
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.temp
