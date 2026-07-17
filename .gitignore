@@ -1,0 +1,84 @@
+# ==============================
+# Python
+# ==============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# ==============================
+# Virtual Environments
+# ==============================
+.venv/
+venv/
+.env/
+.envrc
+
+# ==============================
+# Conda
+# ==============================
+.conda/
+conda-meta/
+
+# ==============================
+# Environment Variables
+# ==============================
+.env
+.env.*
+
+# ==============================
+# Jupyter
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# VS Code
+# ==============================
+.vscode/
+
+# ==============================
+# macOS
+# ==============================
+.DS_Store
+
+# ==============================
+# Logs
+# ==============================
+*.log
+
+# ==============================
+# Testing
+# ==============================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==============================
+# Build
+# ==============================
+build/
+dist/
+
+# ==============================
+# Model Artifacts
+# ==============================
+artifacts/
+
+# ==============================
+# Data
+# Keep large datasets out of Git
+# ==============================
+
+# Ignore the contents of these directories
+data/raw/*
+data/interim/*
+data/processed/*
+
+# Keep directory structure
+!data/raw/.gitkeep
+!data/interim/.gitkeep
+!data/processed/.gitkeep
+!data/external/.gitkeep
