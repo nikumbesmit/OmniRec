@@ -1,8 +1,8 @@
-from pathlib import Path
 import pandas as pd
 from src.data.loader import load_csv
 from src.data.constants import RAW_DATA_DIR
 from src.features.metadata_engineering import MetadataFeatureEngineer
+from src.data.validators import DataValidator
 from src.data.constants import PROCESSED_DATA_DIR
 
 class MoviePipeline :
@@ -12,11 +12,18 @@ class MoviePipeline :
     def __init__(self):
         
         self.metadata_engineer = MetadataFeatureEngineer()
+        self.validator = DataValidator()
 
 
     def run(self) -> pd.DataFrame :
 
+        print("Loading datasets...")
         datasets = self.load_datasets()
+
+        print("Running data validation...")
+        
+        self.validate_datasets(datasets)
+        print("\nAll datasets passed validation.\n")
 
         rating_summary = self.aggregate_ratings(datasets["ratings"])
 
@@ -29,6 +36,21 @@ class MoviePipeline :
         self.save_processed_dataset(movie_features)
 
         return movie_features
+    
+    
+    def validate_datasets(self,datasets : dict[str, pd.DataFrame]) -> None :
+        
+        print("Validating movies...")
+        self.validator.validate_movies(datasets["movies"])
+
+        print("Validating ratings...")
+        self.validator.validate_ratings(datasets["ratings"])
+
+        print("Validating tags...")
+        self.validator.validate_tags(datasets["tags"])
+
+        print("Validating links...")
+        self.validator.validate_links(datasets["links"])
     
 
     def load_datasets(self) :

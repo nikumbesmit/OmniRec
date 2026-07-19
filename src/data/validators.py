@@ -137,8 +137,9 @@ class DataValidator :
              raise ValueError (
                  f"Duplicate movie ids : {duplicate_movie_ids}"
              )
-        
-         warnings.warn(
-             f"{null_tmdb_ids} movies are missing TMDB IDs.",
-             UserWarning,
-            )
+         if null_tmdb_ids > 0 :
+             warnings.warn(
+                f"{null_tmdb_ids} movies are missing TMDB IDs.",
+                UserWarning,
+             )
+         
