@@ -1,7 +1,7 @@
 import json
 from typing import Any
 from pathlib import Path
-from src.tmdb.fetcher import Resource
+from src.tmdb.constants import Resource
 
 
 class TMDBCache :

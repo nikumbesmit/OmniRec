@@ -2,13 +2,8 @@ from typing import Any,Literal
 from collections.abc import Callable
 from src.tmdb.client import TMDBClient
 from src.tmdb.cache import TMDBCache
-from src.tmdb.constants import RESOURCE_DETAILS,RESOURCE_CREDITS,RESOURCE_KEYWORDS
+from src.tmdb.constants import RESOURCE_DETAILS,RESOURCE_CREDITS,RESOURCE_KEYWORDS,Resource
 
-Resource = Literal[
-    "details",
-    "credits",
-    "keywords",
-]
 
 MovieFetcher = Callable[ [int], dict[str, Any]]
 

@@ -113,3 +113,6 @@ Thumbs.db
 # ==============================
 *.tmp
 *.temp
+
+# TMDB Cache
+notebooks/data/cache/
